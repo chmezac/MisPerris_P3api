@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from apps.mascota.views import *
+from apps.mascota.views import MascotaList
 from django.urls import path
 
 urlpatterns = [

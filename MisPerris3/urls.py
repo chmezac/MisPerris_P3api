@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.authtoken import views
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('apps.mascota.urls')),    
+    path('mascota/', include('apps.mascota.urls')),    
 
     #url(r'^api-auth/', include('rest_framework.urls'))
 ]

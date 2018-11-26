@@ -25,7 +25,7 @@ SECRET_KEY = '=3$gkw36_4x*gwz@y24e2$_qsiniu2jp22_s75q%yw!^5!0w%4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'huzumymw513.pythonanywhere.com']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'apps.mascota',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 
@@ -121,7 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+CORS_ORIGIN_WHITELIST = 'https://chmezac.github.io/'
